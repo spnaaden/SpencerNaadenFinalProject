@@ -1,4 +1,7 @@
-
+/**
+ * Author: Spencer Naaden
+ * This class holds the variable values for Student objects, has constructors for Student objects, and has a display method for Student objects to display all of a Student's values.
+ */
 public class Student { //Referencing class Student
 	
 	//Creating private variables for each Student
@@ -23,6 +26,11 @@ public class Student { //Referencing class Student
 		this.next = nxt;
 	}
 	
+	/**
+	 * Method displayStudent
+	 * This method displays all the variable values of a student in a clean, concise way. This method is called often by other methods in the StudentList class.
+	 * This is a void method, so it does not return a value. It also does not accept any arguments.
+	 */
 	public void displayStudent() { // Creating method displayStudent to display the values of a single student
 		System.out.print("[ First Name: " + this.firstName + " || Last Name: " + this.lastName + " || GPA: " + this.GPA + " || On the Dean's List: " + this.isDeansList + " || On President's List: " + this.isPresidentsList + " ]");
 	}

@@ -1,3 +1,7 @@
+/**
+ * Author: Spencer Naaden
+ * This class is solely used for testing the program. 
+ */
 
 public class Driver { //Referencing class Driver.
 

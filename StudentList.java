@@ -1,3 +1,7 @@
+/**
+ * Author: Spencer Naaden
+ * This class holds the constructor for a StudentList (LinkList), and all of the variables and methods to operate the StudentList.
+ */
 
 public class StudentList { // Referencing class StudentList.
 
@@ -11,12 +15,22 @@ public class StudentList { // Referencing class StudentList.
 		firstStudent = null;
 	}
 
+	/**
+	 * Method isEmpty
+	 * This method returns a boolean value based on whether a StudentList is empty or not. 
+	 * This is a boolean method, so it returns a true or false the user based on whether the StudentList is empty. It does not accept any arguments.
+	 */
 	public boolean isEmpty() { // Creating boolean method isEmpty to check if a StudentList is Empty.
 		System.out.println();
 		return (firstStudent == null);	
 	}
 
-	public void searchStudent(String studentLastName) { // Creating void method searchStudent to search for a specific student in a StudentList (using a lastname from a student) returning the Student's position in memory if they exist.
+	/**
+	 * Method searchStudent
+	 * This method searches a StudentList for a student with a specified last name, and then displays that student's record if they exist.
+	 * This is a void method, so it does not return a value. It accepts one argument, which is the last name the user want to search for in the StudentList.
+	 */
+	public void searchStudent(String studentLastName) { // Creating void method searchStudent to search for a specific student in a StudentList (using a last name from a student) returning the Student's position in memory if they exist.
 		currentStudent = firstStudent;
 		while (studentLastName.compareTo(currentStudent.lastName) != 0) {
 			if (currentStudent.next == null) {
@@ -35,7 +49,12 @@ public class StudentList { // Referencing class StudentList.
 
 	}
 
-	public void modifyStudent(String oldStudentLastName, String newFirstName, String newLastName, double newGPA) { // Creating void method modifyStudent to search for a specific student (using a lastname from a student) and to modify that student's values with passed in values if they exist.
+	/**
+	 * Method modifyStudent
+	 * This methods searches a StudentList for a last name of a student, and if it finds the student, then it allows the user to submit new values to modify the existing student.
+	 * This method is a void method, so it does not return any values. It does accept four arguments, the first being the old last name of the student that the user wants to modify, and the three other values are the new values the user would like to set for the student.
+	 */
+	public void modifyStudent(String oldStudentLastName, String newFirstName, String newLastName, double newGPA) { // Creating void method modifyStudent to search for a specific student (using a last name from a student) and to modify that student's values with passed in values if they exist.
 
 		String tempFirstName = "";
 		String tempLastName = "";
@@ -122,6 +141,11 @@ public class StudentList { // Referencing class StudentList.
 		System.out.println();
 	}
 
+	/**
+	 * Method searchDeansStudents
+	 * This method searches a StudentList for all students with a GPA values equal or greater than 3.50, and displays all students that match that criteria.
+	 * This method is a void method, so it does not return a value. It accepts one argument which is the last name of the student that the user wants to delete from the StudentList.
+	 */
 	public void searchDeansStudents() { // Creating void method searchDeansStudents that searches the StudentList for all students that have a GPA higher or equal to 3.50,  and then it displays those students if there are any that match the criteria.
 		
 		int deansStudentsCounter = 0;
@@ -145,6 +169,11 @@ public class StudentList { // Referencing class StudentList.
 			}
 	}
 
+	/**
+	 * Method searchPresidentsStudents
+	 * This method searches a StudentList for all students with a GPA values equal to 4.00, and displays all students that match that criteria.
+	 * This method is a void method, so it does not return any values. It also does not accept any arguments. 
+	 */
 	public void searchPresidentsStudents() { // Creating void method searchPresidentsStudents that searches the StudentList for all students that have a GPA equal to 4.00, and then it displays those students if there are any that match the criteria.
 		
 		int presidentStudentsCounter = 0;
@@ -168,7 +197,12 @@ public class StudentList { // Referencing class StudentList.
 			}
 	}
 
-	public void deleteStudent(String studentLastName) { // Creating void method deleteStudent to search for a specific Student in a StudentList (using a lastname from a student), and then delete the Student from the StudentList if they exist.
+	/**
+	 * Method deleteStudent
+	 * This method searches for a student in the StudentList based on their last name, and if it finds a student with that last name, it deletes them from the StudentList.
+	 * This method is a void method, so it does not return a value. It accepts one argument which is the last name of the student that the user wants to delete from the StudentList.
+	 */
+	public void deleteStudent(String studentLastName) { // Creating void method deleteStudent to search for a specific Student in a StudentList (using a last name from a student), and then delete the Student from the StudentList if they exist.
 		if (isEmpty() == true) {
 			System.out.println("The StudentList is Empty!");
 			return;
@@ -194,7 +228,13 @@ public class StudentList { // Referencing class StudentList.
 		System.out.println("Student Successfully Deleted!");
 		System.out.println();
 	}
+	
 
+	/**
+	 * Method insertFirstStudent
+	 * This method inserts a new student into the StudentList as the first student in the list. 
+	 * This method is a void method, so it does not return a value. It accepts three arguments which are used as values for the new student being inserted into the StudentList.
+	 */
 	public void insertFirstStudent(String studentFirstName, String studentLastName, double studentGPA) { // Creating void method insertFirstStudent to insert a new Student at the start of a StudentList, and assigning it passed in values.
 
 		if (isEmpty() != true) {
@@ -225,7 +265,14 @@ public class StudentList { // Referencing class StudentList.
 		System.out.println();
 	}
 
-	public void insertStudent(String studentToPlaceNewStudentAfter, String studentFirstName, String studentLastName, double studentGPA) { // Creating void method insertStudent to search a StudentList for a specific student(using a specific lastname), and then inserting a new Student right after that one with another lastname value that was passed in.
+	
+
+	/**
+	 * Method insertStudent
+	 * This method takes in the values for a new student, inserts the student into the StudentList, and then sorts the whole StudentList.
+	 * This method is a void method, so it does not return any value. It has four arguments: the first argument is used to find a student based on their last name to insert a student after, and the rest of the arguments are values for the new student.
+	 */
+	public void insertStudent(String studentToPlaceNewStudentAfter, String studentFirstName, String studentLastName, double studentGPA) { // Creating void method insertStudent to search a StudentList for a specific student(using a specific last name), and then inserting a new Student right after that one with another last name value that was passed in.
 		
 		String tempFirstName = "";
 		String tempLastName = "";
@@ -318,6 +365,11 @@ public class StudentList { // Referencing class StudentList.
 		}
 	}
 
+	/**
+	 * Method displayStudentList.
+	 * This method displays the contents of a StudentList.
+	 * This method is a void method, so it does not return a value. It also does not accept any arguments to be used in the method.
+	 */
 	public void displayStudentList() { // Creating void method displayStudentList to print the contents of a StudentList.
 		
 		if (isEmpty() == true) {
